@@ -1,0 +1,601 @@
+
+
+body {
+
+  margin : 0em;
+  padding : 0em;
+  border: 0em;
+
+  color: black;
+  background-color:  white;
+
+  font-family: 'DejaVu Sans', sans-serif, Arial, Helvetica;
+  font-size: 10pt;
+
+}
+
+a {
+  color: #aa7e32;
+  background-color: transparent;
+  text-decoration : none;
+}
+
+a:link {
+  color: #aa7e32;
+  background-color: transparent;
+}
+
+a:visited {
+  color: #aa7e32;
+  background-color: transparent;
+}
+
+a:hover {
+  color: #aa7e32;
+  text-decoration: underline;
+}
+
+p { text-align:  justify; }
+
+a.information {
+
+  color:  white;
+  background-color: #006400;
+  position: relative;
+
+}
+
+a.information:hover {
+
+  color:  #006400;
+  background-color: white;
+
+}
+
+a.information span {
+
+  color: black;
+  background-color: white;
+
+  border: 2px solid #006400;
+  padding: 1em;
+  height: 14em;
+  width: 18em;
+
+  font-size: 10pt;
+
+  position:fixed;
+  top : 50%;
+  left: 50%;
+  margin-top: -7em;
+  margin-left: -9em;
+  z-index : 9999;
+
+  visibility: hidden;
+
+}
+
+a.information:hover span {
+  visibility: visible;
+}
+
+table.slots {
+
+  margin : 1%;
+  border: none;
+  padding : 0em;
+
+  background-color:  white;
+
+}
+
+table.slots td {
+
+  border: none;
+  padding : 0.3em;
+  text-align:  center;
+
+}
+
+table.slots td.dayname {
+
+  border: 1px solid black;
+  padding : 0.3em;
+
+}
+
+table.slots td.hour {
+
+  border: 1px solid black;
+  padding : 0.3em;
+  min-width: 3em;
+  max-width: 4em;
+  width: 3em;
+
+}
+
+table.slots td.empty {
+
+  border-top : 1px solid white;
+  border-right: 1px solid #c0c0c0;
+  border-bottom : 1px solid #c0c0c0;
+  border-left: 1px solid white;
+
+  padding : 0.3em;
+
+  color:  #c0c0c0;
+
+}/* 
+ * Slots CSS
+ * 
+ * Since Version 1.0.0 - AANM
+ * Version 2.0.0 - 2016-06-05 - AANM - Adding Interactive Sessions 
+*/
+
+/* These are ceremony slots: only one room, all people there */
+table.slots td.OC,
+table.slots td.CC,
+table.slots td.PL,
+table.slots td.WR,
+table.slots td.AP,
+table.slots td.KS,
+table.slots td.GD,
+table.slots td.CB,
+table.slots td.RD,
+table.slots td.IS,
+table.slots td.LK,
+table.slots td.IK,
+table.slots td.KA,
+table.slots td.EV 
+{
+  border : 5px solid #66ccff;
+  padding : 0.3em;
+}
+
+table.slots td.OC form button,
+table.slots td.CC form button,
+table.slots td.PL form button,
+table.slots td.WR form button,
+table.slots td.AP form button,
+table.slots td.KS form button,
+table.slots td.GD form button,
+table.slots td.CB form button,
+table.slots td.RD form button,
+table.slots td.IS form button,
+table.slots td.LK form button,
+table.slots td.IK form button,
+table.slots td.KA form button,
+table.slots td.EV form button
+{
+  display : inline;
+  margin : 0.1em;
+  border : 3px solid #66ccff;
+  padding : 0.1em 0.3em 0.1em 0.3em;
+  color : #66ccff;
+  background-color: transparent;
+  font-family: 'Dejavu Sans', sans-serif, Arial, Helvetica;
+  font-size: 10pt;
+  font-weight: bold;
+}
+
+table.slots td.OC form button:hover,
+table.slots td.CC form button:hover,
+table.slots td.PL form button:hover,
+table.slots td.WR form button:hover,
+table.slots td.AP form button:hover,
+table.slots td.KS form button:hover,
+table.slots td.GD form button:hover,
+table.slots td.CB form button:hover,
+table.slots td.RD form button:hover,
+table.slots td.IS form button:hover,
+table.slots td.LK form button:hover,
+table.slots td.IK form button:hover,
+table.slots td.KA form button:hover,
+table.slots td.EV form button:hover
+{
+  border : 3px solid black;
+  color : black;
+  background-color: #66ccff;
+}
+
+/* Oral Sessions */
+table.slots td.OS,
+table.slots td.OSS,
+table.slots td.OSL 
+{
+  border : 5px solid #ffcc66;
+  padding : 0.3em;
+}
+
+table.slots td.OS  form button,
+table.slots td.OSS form button,
+table.slots td.OSL form button 
+{
+  display : inline;
+  margin : 0.1em;
+  border : 3px solid #ffcc66;
+  padding : 0.1em 0.3em 0.1em 0.3em;
+  color : #ffcc66;
+  background-color: transparent;
+  font-family: 'Dejavu Sans', sans-serif, Arial, Helvetica;
+  font-size: 10pt;
+  font-weight: bold;
+}
+
+table.slots td.OS  form button:hover,
+table.slots td.OSS form button:hover,
+table.slots td.OSL form button:hover 
+{
+  border : 3px solid black;
+  color : black;
+  background-color: #ffcc66;
+}
+
+/*======== Interactive Sessions (with time) ========*/
+/*======== Dialogue Sessions (with not time) ========*/
+
+table.slots td.IN,
+table.slots td.INS,
+table.slots td.INL,
+table.slots td.DS,
+table.slots td.DSS,
+table.slots td.DSL
+{
+  border : 5px solid #cc66ff;
+  padding : 0.3em;
+}
+
+table.slots td.IN  form button,
+table.slots td.INS form button,
+table.slots td.INL form button,
+table.slots td.DS  form button,
+table.slots td.DSS form button,
+table.slots td.DSL form button 
+{
+  display : inline;
+  margin : 0.1em;
+  border : 3px solid #cc66ff;
+  padding : 0.1em 0.3em 0.1em 0.3em;
+  color : #cc66ff;
+  background-color: transparent;
+  font-family: sans-serif, 'Dejavu Sans',  Arial, Helvetica;
+  font-size: 10pt;
+  font-weight: bold;
+}
+
+ 
+table.slots td.IN  form button:hover,
+table.slots td.INL form button:hover,
+table.slots td.INL form button:hover,
+table.slots td.DS  form button:hover,
+table.slots td.DSS form button:hover,
+table.slots td.DSL form button:hover
+{
+  border : 3px solid black;
+  color : black;
+  background-color: #cc66ff;
+}
+
+/*======== Poster Sessions ========*/
+/*======== Exhibitions Sessions ========*/
+
+table.slots td.PS,
+table.slots td.PSS,
+table.slots td.PSL,
+table.slots td.EX {
+
+  border : 5px solid #ffff66;
+  padding : 0.3em;
+
+}
+
+table.slots td.PS  form button,
+table.slots td.PSS form button,
+table.slots td.PSL form button,
+table.slots td.EX form button {
+
+  display : inline;
+
+  margin : 0.1em;
+  border : 3px solid #ffff66;
+  padding : 0.1em 0.3em 0.1em 0.3em;
+
+  color : #ffff66;
+  background-color: transparent;
+
+  font-family: 'Dejavu Sans', sans-serif, Arial, Helvetica;
+  font-size: 10pt;
+  font-weight: bold;
+
+}
+
+table.slots td.PS  form button:hover,
+table.slots td.PSS form button:hover,
+table.slots td.PSL form button:hover,
+table.slots td.EX  form button:hover  {
+
+  border : 3px solid black;
+
+  color : black;
+  background-color: #ffff66;
+
+}
+
+/*======== Absent Author Sessions ========*/
+
+table.slots td.AS,
+table.slots td.ASS,
+table.slots td.ASL,
+table.slots td.ASF {
+
+  border : 5px solid #80804c;
+  padding : 0.3em;
+
+}
+
+table.slots td.AS  form button,
+table.slots td.ASS form button,
+table.slots td.ASL form button,
+table.slots td.ASF form button {
+
+  display : inline;
+
+  margin : 0.1em;
+  border : 3px solid #80804c;
+  padding : 0.1em 0.3em 0.1em 0.3em;
+
+  color : #80804c;
+  background-color: transparent;
+
+  font-family: 'Dejavu Sans', sans-serif, Arial, Helvetica;
+  font-size: 10pt;
+  font-weight: bold;
+
+}
+
+table.slots td.AS  form button:hover,
+table.slots td.ASS form button:hover,
+table.slots td.ASL form button:hover,
+table.slots td.ASF form button:hover {
+
+  border : 3px solid black;
+
+  color : black;
+  background-color: #80804c;
+
+}
+
+/*======== Tutorials, Workshops, Demonstration ========*/
+
+table.slots td.TU,
+table.slots td.WS,
+table.slots td.DM {
+
+  border : 5px solid #ccb266;
+  padding : 0.3em;
+
+}
+
+table.slots td.TU form button,
+table.slots td.WS form button,
+table.slots td.DM form button {
+
+  display : inline;
+
+  margin : 0.1em;
+  border : 3px solid #ccb266;
+  padding : 0.1em 0.3em 0.1em 0.3em;
+
+  color : #ccb266;
+  background-color: transparent;
+
+  font-family: 'Dejavu Sans', sans-serif, Arial, Helvetica;
+  font-size: 10pt;
+  font-weight: bold;
+
+}
+
+table.slots td.TU form button:hover,
+table.slots td.WS form button:hover,
+table.slots td.DM form button:hover {
+
+  border : 3px solid black;
+
+  color : black;
+  background-color: #ccb266;
+
+}
+
+/*======== Panels and Round Tables, Industry Forum ========*/
+
+table.slots td.PA,
+table.slots td.RT,
+table.slots td.IF,
+table.slots td.IP
+{
+  border : 5px solid #bb99ff;
+  padding : 0.3em;
+}
+
+table.slots td.PA form button,
+table.slots td.RT form button,
+table.slots td.IF form button,
+table.slots td.IP form button 
+{
+  display : inline;
+  margin : 0.1em;
+  border : 3px solid #bb99ff;
+  padding : 0.1em 0.3em 0.1em 0.3em;
+  color : #bb99ff;
+  background-color: transparent;
+  font-family: 'Dejavu Sans', sans-serif, Arial, Helvetica;
+  font-size: 10pt;
+  font-weight: bold;
+  display : inline;
+}
+
+table.slots td.PA form button:hover,
+table.slots td.RT form button:hover,
+table.slots td.IF form button:hover,
+table.slots td.IP form button:hover 
+{
+  border : 3px solid black;
+  color : black;
+  background-color: #bb99ff;
+}
+
+/*======== Author Breakfast, Meetings and Reunion ========*/
+
+table.slots td.AB,
+table.slots td.ME,
+table.slots td.RE 
+{
+  border : 5px solid #ff9999;
+  padding : 0.3em;
+}
+
+table.slots td.AB form button,
+table.slots td.ME form button,
+table.slots td.RE form button 
+{
+  display : inline;
+  margin : 0.1em;
+  border : 3px solid #ff9999;
+  padding : 0.1em 0.3em 0.1em 0.3em;
+  color : #ff9999;
+  background-color: transparent;
+  font-family: 'Dejavu Sans', sans-serif, Arial, Helvetica;
+  font-size: 10pt;
+  font-weight: bold;
+  display : inline;
+}
+
+table.slots td.AB form button:hover,
+table.slots td.ME form button:hover,
+table.slots td.RE form button:hover  
+{
+  border : 3px solid black;
+  color : black;
+  background-color: #ff9999;
+}
+
+/*======== Coffe Break and Lunch ========*/
+
+table.slots td.CF,
+table.slots td.TB,
+table.slots td.RF,
+table.slots td.AB,
+table.slots td.LU,
+table.slots td.BF,
+table.slots td.DI 
+{
+  border : 5px solid #99ff66;
+  padding : 0.3em;
+}
+
+table.slots td.CF form button,
+table.slots td.TB form button,
+table.slots td.RF form button,
+table.slots td.AB form button,
+table.slots td.LU form button,
+table.slots td.BF form button,
+table.slots td.DI form button 
+{
+  display : inline;
+  margin : 0.1em;
+  border : 3px solid #99ff66;
+  padding : 0.1em 0.3em 0.1em 0.3em;
+  color : #99ff66;
+  background-color: transparent;
+  font-family: 'Dejavu Sans', sans-serif, Arial, Helvetica;
+  font-size: 10pt;
+  font-weight: bold;
+  display : inline;
+}
+
+table.slots td.CF form button:hover,
+table.slots td.TB form button:hover,
+table.slots td.RF form button:hover,
+table.slots td.AB form button:hover,
+table.slots td.LU form button:hover,
+table.slots td.BF form button:hover,
+table.slots td.DI form button:hover 
+{
+  border : 3px solid black;
+  color : black;
+  background-color: #99ff66;
+}
+
+/*======== Spare Time and Blocked Spare Time ========*/
+
+table.slots td.ST,
+table.slots td.BT {
+
+  border : 5px solid #999999;
+  padding : 0.3em;
+
+}
+
+table.slots td.ST form button,
+table.slots td.BT form button {
+
+  display : inline;
+
+  margin : 0.1em;
+  border : 3px solid #999999;
+  padding : 0.1em 0.3em 0.1em 0.3em;
+
+  color : #999999;
+  background-color: transparent;
+
+  font-family: 'Dejavu Sans', sans-serif, Arial, Helvetica;
+  font-size: 10pt;
+  font-weight: bold;
+  display : inline;
+
+}
+
+table.slots td.ST form button:hover,
+table.slots td.BT form button:hover  {
+
+  border : 3px solid black;
+
+  color : black;
+  background-color: #999999;
+
+}
+
+/*======== Selected Unused Time slots ========*/
+
+table.slots td.UT {
+
+  border : 5px solid #ff3030;
+  padding : 0.3em;
+
+}
+
+table.slots td.UT form button {
+
+  display : inline;
+
+  margin : 0.1em;
+  border : 3px solid #ff3030;
+  padding : 0.1em 0.3em 0.1em 0.3em;
+
+  color : black;
+  background-color: transparent;
+
+  font-family: 'Dejavu Sans', sans-serif, Arial, Helvetica;
+  font-size: 10pt;
+  font-weight: bold;
+
+}
+
+table.slots td.UT form button:hover  {
+
+  border : 3px solid white;
+
+  color : white;
+  background-color: #ff3030;
+
+}
